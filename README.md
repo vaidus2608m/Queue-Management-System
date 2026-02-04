@@ -1,16 +1,70 @@
-# React + Vite
+# Queue Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based **Queue Management System** that simulates real-world queue handling scenarios such as banks, hospitals, and service centers.  
+The application follows **FIFO (First In, First Out)** logic and provides clear, real-time status updates through a clean and responsive user interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+Queue management is a common real-world problem. This project focuses on implementing queue logic on the frontend using React while maintaining clean state management and clear UI feedback.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Users can:
+- Add customers to a queue
+- Serve customers in the correct order
+- Track each customer's current status
+- Remove customers after completion
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+### Core Functionality
+- Add customers to the queue
+- FIFO-based serving mechanism
+- Real-time status updates:
+  - Waiting
+  - Serving
+  - Completed
+- Remove customers from the queue
+
+### UI & UX
+- Clean and intuitive interface
+- Responsive design for different screen sizes
+- Color-coded status indicators
+- Smooth state transitions
+
+---
+
+## Tech Stack
+
+- React
+- JavaScript (ES6+)
+- CSS
+- React Hooks (`useState`)
+
+---
+
+## Folder Structure
+
+queue-management-system/  
+├── public/  
+├── src/  
+│ ├── components/  
+│ │ ├── QueueForm.jsx  
+│ │ ├── QueueList.jsx  
+│ │ └── QueueItem.jsx  
+│ ├── App.jsx  
+│ ├── index.js  
+│ └── styles.css  
+├── .gitignore  
+├── package.json  
+└── README.md
+---
+
+## How the Queue Works
+
+1. Customers are added to the queue in the order they arrive
+2. The first customer added is the first to be served (FIFO)
+3. When a customer is served, their status changes from **Waiting → Serving**
+4. After completion, the customer can be removed from the queue
