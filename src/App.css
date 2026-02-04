@@ -1,0 +1,247 @@
+/* Base & Layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #1A1A1A;
+  color: #D3D3D3;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+#root {
+  width: 100%;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+/* Header */
+.app header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.app header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #6A5ACD;
+}
+
+.app header h3 {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #D3D3D3;
+}
+
+/* Main - Two Panel Grid */
+.app main {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(400px, 1.6fr);
+  gap: 1.75rem;
+  align-items: start;
+}
+
+/* Left Panel - Add to Queue */
+.queue-form {
+  background-color: #2C2C2C;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.queue-form h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #6A5ACD;
+  margin-bottom: 1.25rem;
+}
+
+.queue-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.queue-form input,
+.queue-form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #3A3A3A;
+  border: 1px solid #6A5ACD;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.queue-form select {
+  border-color: rgba(255, 255, 255, 0.2);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23D3D3D3' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2rem;
+}
+
+.queue-form input::placeholder {
+  color: #888;
+}
+
+.queue-form input:focus,
+.queue-form select:focus {
+  border-color: #6A5ACD;
+  box-shadow: 0 0 0 2px rgba(106, 90, 205, 0.25);
+}
+
+.queue-form button {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  background-color: #6A5ACD;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.queue-form button:hover {
+  opacity: 0.92;
+}
+
+/* Right Panel - Current Queue */
+.queue-display {
+  background-color: #2C2C2C;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.queue-display h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1.25rem;
+}
+
+.queue-display .empty-queue {
+  color: #888;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.queue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.queue-item {
+  background-color: #3A3A3A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.customer-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.customer-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.customer-info p {
+  font-size: 0.875rem;
+  color: #D3D3D3;
+  margin-top: 0.25rem;
+}
+
+.queue-item .status {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  text-transform: lowercase;
+}
+
+.status-waiting {
+  color: #FFA500;
+}
+
+.status-serving {
+  color: #28A745;
+}
+
+.status-completed {
+  color: #6c757d;
+}
+
+/* Action Buttons */
+.queue-item .actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.serve-btn {
+  padding: 0.5rem 1rem;
+  background-color: #28A745;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.complete-btn {
+  padding: 0.5rem 1rem;
+  background-color: #17a2b8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.rmv-btn {
+  padding: 0.5rem 1rem;
+  background-color: #DC3545;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.serve-btn:hover,
+.complete-btn:hover,
+.rmv-btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .app main {
+    grid-template-columns: 1fr;
+  }
+}
